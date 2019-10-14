@@ -19,13 +19,6 @@ defmodule Issues.CLI do
     returns a tuple of {user,project,count} or `:help`
     """
     def parse_args(argv) do
-        # parse = OptionParser.parse(argv, switches: [help: :boolean], aliases: [h: :help])
-        # case parse do
-        #     {[help: true], _, _} -> :help
-        #     {_, [user, project, count], _ } -> {user, project, String.to_integer(count) }
-        #     {_, [user, project], _} -> {user, project, @default_count}
-        #     _ -> :help
-        # end 
         OptionParser.parse(argv, switches: [help: :boolean], aliases: [h: :help])
         |> elem(1)
         |> args_to_internal_representation()

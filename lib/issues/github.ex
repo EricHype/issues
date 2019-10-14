@@ -1,5 +1,4 @@
 defmodule Issues.GithubIssues do
-  # @user_agent[{"User-Agent", "username@gmail.com"}]
   @github_url Application.get_env(:issues, :github_url)
   def issues_url(user, project) do
     "#{@github_url}/repos/#{user}/#{project}/issues"
